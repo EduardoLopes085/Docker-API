@@ -22,13 +22,13 @@ services:
     depends_on:
       - loja-db
   
-  #loja-front:
-  #  build: ./frontend
-  #  image: loja-front-imagem
-  #  container_name: loja-front-container
-  #  ports:
-  #    - "5173:5173"
-  #  depends_on:
-  #    - loja-api
+  loja-front:
+    build: ./frontend
+    image: loja-front-imagem
+    container_name: loja-front-container
+    ports:
+      - "5173:5173"
+    depends_on:
+      - loja-api
 volumes:
   meus_dados:
