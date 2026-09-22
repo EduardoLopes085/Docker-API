@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [produtos, setProdutos] = useState([]);
+  
   async function buscarProdutos() {
     const { data } = await axios.get("http://localhost:3000/produtos");
     setProdutos(data);

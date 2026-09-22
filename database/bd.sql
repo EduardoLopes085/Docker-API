@@ -7,9 +7,6 @@ CREATE TABLE produtos (
 INSERT INTO produtos (nome, valor) VALUES
 ('CAMISETA', 59.90),
 ('TENIS ESPORTIVO', 199.90),
-('CALÇA JEANS', 129.90),
+('CALCA JEANS', 129.90),
 ('BONE', 39.90),
 ('MOCHILA', 89.90);
-
-
-
