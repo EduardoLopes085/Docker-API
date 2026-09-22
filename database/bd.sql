@@ -1,0 +1,15 @@
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome  VARCHAR(50) NOT NULL,
+    valor DECIMAL(10,2) NOT NULL
+);
+
+INSERT INTO produtos (nome, valor) VALUES
+('CAMISETA', 59.90),
+('TENIS ESPORTIVO', 199.90),
+('CALÇA JEANS', 129.90),
+('BONE', 39.90),
+('MOCHILA', 89.90);
+
+
+
