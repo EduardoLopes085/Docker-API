@@ -28,10 +28,10 @@ function App() {
               🛍️
             </div>
 
-            <h2>{produto.nome}</h2>
+            <h2 className="nome">{produto.nome}</h2>
 
             <p className="preco">
-              R$ {Number(produto.preco).toFixed(2).replace('.', ',')}
+              R$ {Number(produto.valor).toFixed(2).replace('.', ',')}
             </p>
 
             <button>Comprar</button>

@@ -31,6 +31,10 @@ header p {
   color: #ccc;
 }
 
+.nome {
+  color: #222;
+}
+
 .vitrine {
   max-width: 1200px;
   margin: 40px auto;
