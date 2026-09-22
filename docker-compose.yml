@@ -3,7 +3,7 @@ services:
     image: mysql:8.4
     container_name: loja-db-banco
     environment:
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: loja-app
       MYSQL_PASSWORD: 12345
       MYSQL_DATABASE: loja
@@ -11,7 +11,7 @@ services:
       - "3306:3306"
     volumes: 
       - meus_dados:/var/lib/mysql
-      - ./database/loja.sql:/docker-entrypoint-initdb.d/loja.sql:ro
+      - ./database/bd.sql:/docker-entrypoint-initdb.d/bd.sql:ro
   
   loja-api:
     build: ./backend
@@ -22,13 +22,13 @@ services:
     depends_on:
       - loja-db
   
-  loja-front:
-    build: ./frontend
-    image: loja-front-imagem
-    container_name: loja-front-container
-    ports:
-      - "5173:5173"
-    depends_on:
-      - loja-api
+  #loja-front:
+  #  build: ./frontend
+  #  image: loja-front-imagem
+  #  container_name: loja-front-container
+  #  ports:
+  #    - "5173:5173"
+  #  depends_on:
+  #    - loja-api
 volumes:
   meus_dados:
