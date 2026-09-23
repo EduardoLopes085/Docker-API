@@ -3,10 +3,10 @@ services:
     image: mysql:8.4
     container_name: loja-db-banco
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: loja-app
-      MYSQL_PASSWORD: 12345
-      MYSQL_DATABASE: loja
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
     ports:
       - "3306:3306"
     volumes: 
@@ -15,10 +15,17 @@ services:
   
   loja-api:
     build: ./backend
+    env_file:
+      - .env
     image: loja-api-imagem
     container_name: loja-api-container
     ports:
       - "3000:3000"
+    environment:
+      BACK_HOST: ${DB_HOST}
+      BACK_USER: ${DB_USER}
+      BACK_PASSWORD: ${DB_PASSWORD}
+      BACK_DATABASE: ${DB_DATABASE}
     depends_on:
       - loja-db
   

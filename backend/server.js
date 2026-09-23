@@ -1,6 +1,8 @@
 import express from 'express'
 import mysql from 'mysql2/promise'
 import cors from 'cors'
+import 'dotenv/config';
+
 
 const PORT = 3000;
 const app = express();
@@ -8,10 +10,10 @@ app.use(express.json());
 app.use(cors());
 
 const conexao = mysql.createPool({
-    host: "loja-db",
-    user: "loja-app",
-    password: "12345",
-    database: "loja",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
 });
 
 app.get("/", (req, res)=>{
